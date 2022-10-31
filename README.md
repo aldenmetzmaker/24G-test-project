@@ -4,6 +4,8 @@ Alden Metzmaker
 
 hours spent on project: 5-6
 
+one thing that gave me some difficulties was the styling of the modal pop up, like having a fixed header with the drink name, and just overall matching the given design perfectly
+
 link to s3 bucket: http://aldenmetzmaker24gtest.com.s3-website-us-east-1.amazonaws.com/
 
 to run this project locally, in your terminal use,
