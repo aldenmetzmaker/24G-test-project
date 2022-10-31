@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import logo from './images/24g_logo.svg';
-import CardInfo from './cardInfo.js';
+import CardInfo from './components/cardInfo.js';
 import Modal from './components/modal/Modal.js';
 
 export default class App extends React.Component {
@@ -11,8 +11,8 @@ export default class App extends React.Component {
     this.state = {
       show: false, 
       name: null,
-      steps: [null],
-      ingredients: [null],
+      steps: [],
+      ingredients: [],
       glassware: null,
       mocktail: null
     };
@@ -20,14 +20,14 @@ export default class App extends React.Component {
     this.hideModal = this.hideModal.bind(this);
   }
   //handle information from child component onClick
-  showModal = (name, instructions, ingredients, mocktail, glassware) => {
+  showModal = (drink) => {
     this.setState({ 
       show: true,
-      name: name,
-      steps: instructions,
-      ingredients: ingredients,
-      mocktail: mocktail,
-      glassware: glassware
+      name: drink.name,
+      steps: drink.steps,
+      ingredients: drink.ingredients,
+      mocktail: drink.mocktail,
+      glassware: drink.glassware
     });
     
   };
@@ -38,7 +38,7 @@ export default class App extends React.Component {
   return (
     <div className="App">
       <div className="logo">
-        <img src = {logo} alt="none" className="logoImg"></img>
+        <img src = {logo} alt="24glogo" className="logoImg"></img>
       </div>
       
         <h1 className="welcome-title">

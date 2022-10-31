@@ -6,13 +6,8 @@ export default class Card extends React.Component{
     constructor(props){
         super(props);
             this.state= {
+                drink: [],
                 currentImage: null,
-                instructions: null,
-                steps: null,
-                ingredients: null,
-                glassware: null,
-                name: null,
-                mocktail: null,
                 showModal: false
 
             }
@@ -20,39 +15,34 @@ export default class Card extends React.Component{
         //assign unique info to each cards state
         componentDidMount(){
             this.setState({
-                currentImage: this.props.info.images.front,
-                instructions: this.props.info.steps,
-                name: this.props.info.name,
-                ingredients: this.props.info.ingredients,
-                glassware: this.props.info.glassware,
-                mocktail: this.props.info.mocktail,
-
+                drink: this.props.info,
+                currentImage: this.props.info.images.front
             })
         }
         //change to back image on hover
         changeImageOnHover() {   
             this.setState({
-                currentImage: this.props.info.images.back
+                currentImage: this.state.drink.images.back
             })
         }
         changeImageOnExit(){
             this.setState({
-                currentImage: this.props.info.images.front
+                currentImage: this.state.drink.images.front
             })
         }
     //onClick passes that cards state information back to parent for modal pop up   
-    render(){
-        
+    render(){    
         return(
             
             <div className="card">
                 <img className="card-image" src = {this.state.currentImage} alt="card pic"  
                     onMouseEnter={() => this.changeImageOnHover()}
                     onMouseLeave={() => this.changeImageOnExit()}
-                    onClick = {() => this.props.showModal(this.state.name, this.state.instructions, this.state.ingredients, this.state.mocktail, this.state.glassware)}
+                    onClick = {() => this.props.showModal(this.state.drink)}
                 />
 
             </div>
         )
     }
 }
+

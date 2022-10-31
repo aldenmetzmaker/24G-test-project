@@ -1,10 +1,10 @@
 import React from "react";
-import Card from './components/card/card.js';
-import './components/card/card.css';
+import Card from './card/card.js';
+import './card/card.css';
 export default class CardInfo extends React.Component{
     state = {
         loading: true,
-        drinks: []
+        info: []
     }
     //fetch json for drinks
     async componentDidMount(){
@@ -13,7 +13,7 @@ export default class CardInfo extends React.Component{
             response.json())
             .then(data => {
                 this.setState({
-                    drinks: data,
+                    info: data,
                     loading: false,
                 })
                 console.log(this.state)
@@ -21,10 +21,10 @@ export default class CardInfo extends React.Component{
     }
     //if card info is loaded, map json to card component
     render(){
-        var cardInfo = this.state.drinks.drinks;
+        var cardInfo = this.state.info.drinks;
         return(
             <div className="cardInfo">
-            {this.state.loading || !this.state.drinks ? (
+            {this.state.loading || !this.state.info ? (
                 <div>loading...</div>
             ) : (
                 <div className="card-group">

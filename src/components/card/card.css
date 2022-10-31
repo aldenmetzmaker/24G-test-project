@@ -25,16 +25,12 @@
     column-gap: 15px;
     row-gap: 15px;
     }
-    .card{
-    
+    .card{  
         cursor: pointer;
         width: 150px;
         height: 150px;
         outline-color: black;
-        padding: 2%;
-    /* UI Properties */
-    
-        
+        padding: 2%;     
     }
 }
 @media only screen 
