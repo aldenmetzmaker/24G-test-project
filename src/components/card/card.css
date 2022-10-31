@@ -1,0 +1,63 @@
+.card-group{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    column-gap: 35px;
+    row-gap: 35px;
+}
+.card{
+    cursor: pointer;
+    height: 220px;
+    padding: 2%;  
+}
+.card:hover{
+    opacity: 1;
+    transform: translateY(-5px);
+}
+.card-image{
+    height: inherit;
+    width: inherit;
+}
+@media only screen and (max-width: 667px) {
+    .card-group{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 15px;
+    row-gap: 15px;
+    }
+    .card{
+    
+        cursor: pointer;
+        width: 150px;
+        height: 150px;
+        outline-color: black;
+        padding: 2%;
+    /* UI Properties */
+    
+        
+    }
+}
+@media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) {
+    /* Styles */
+    
+    .card-group{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 25px;
+        row-gap: 25px;
+        }
+        .card{
+    
+            cursor: pointer;
+            width: 180px;
+            height: 180px;
+            outline-color: black;
+            padding: 2%;
+        /* UI Properties */
+        
+            
+        }
+  }
