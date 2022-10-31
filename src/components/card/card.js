@@ -6,28 +6,24 @@ export default class Card extends React.Component{
     constructor(props){
         super(props);
             this.state= {
-                drink: [],
-                currentImage: null,
-                showModal: false
-
+                currentImage: null
             }
         }
         //assign unique info to each cards state
         componentDidMount(){
             this.setState({
-                drink: this.props.info,
                 currentImage: this.props.info.images.front
             })
         }
         //change to back image on hover
         changeImageOnHover() {   
             this.setState({
-                currentImage: this.state.drink.images.back
+                currentImage: this.props.info.images.back
             })
         }
         changeImageOnExit(){
             this.setState({
-                currentImage: this.state.drink.images.front
+                currentImage: this.props.info.images.front
             })
         }
     //onClick passes that cards state information back to parent for modal pop up   
@@ -38,7 +34,7 @@ export default class Card extends React.Component{
                 <img className="card-image" src = {this.state.currentImage} alt="card pic"  
                     onMouseEnter={() => this.changeImageOnHover()}
                     onMouseLeave={() => this.changeImageOnExit()}
-                    onClick = {() => this.props.showModal(this.state.drink)}
+                    onClick = {() => this.props.showModal(this.props.info)}
                 />
 
             </div>
