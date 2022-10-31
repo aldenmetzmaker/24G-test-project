@@ -4,6 +4,8 @@ Alden Metzmaker
 
 hours spent on project: 5-6
 
+link to s3 bucket: http://aldenmetzmaker24gtest.com.s3-website-us-east-1.amazonaws.com/
+
 to run this project locally, in your terminal use,
 
 git clone https://github.com/aldenmetzmaker/24G-test-project.git
